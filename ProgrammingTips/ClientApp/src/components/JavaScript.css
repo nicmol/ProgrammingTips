@@ -1,0 +1,17 @@
+﻿
+element.style {
+}
+
+
+pre[data-language] {
+    width: 110%;
+    margin-left: -5%;
+    line-height: 1.5;
+    border-radius: 0px;
+    padding: 3rem;
+}
+
+.cobalt2 {
+    background-color: #193549;
+    color: #fff;
+}
