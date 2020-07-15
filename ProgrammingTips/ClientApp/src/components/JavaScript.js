@@ -10,22 +10,21 @@ export class JavaScript extends Component {
     }
     componentDidMount() {
         this.populateJsCodeSnippets();
-
     }
+
     static renderSnippetsTable(jsTips) {
         return (
             <table className='table table-striped' aria-labelledby="tabelLabel">
                 <thead>
                     <tr>
-                        <th>JsCodeSnippet</th>
-                       
+                        <th>Js Code Snippets</th>
+                        <th>Description</th>                       
                     </tr>
                 </thead>
                 <tbody>
-                    {jsTips.map(jsTips =>
-                        <tr key={jsTips.JsCodeSnippet}>
-                            <td>{jsTips.JsCodeSnippet}</td>
-                          
+                    {jsTips.map(jsTip =>
+                        <tr key={jsTip.JsCodeSnippet}>
+                            <td>{jsTip.JsCodeSnippet}</td>                          
                         </tr>
                     )}
                 </tbody>
@@ -49,8 +48,9 @@ export class JavaScript extends Component {
     async populateJsCodeSnippets() {
         const response = await fetch('javascript');
         const data = await response.json();
-        this.setState({ forecasts: data, loading: false });
-    };
+        this.setState({ jsTips: data, loading: false });
+    }
+}
 
 //render() {
 //    return (
@@ -100,4 +100,3 @@ export class JavaScript extends Component {
 //        </div>
 //        );
 //       }
-}

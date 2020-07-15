@@ -15,6 +15,7 @@ namespace ProgrammingTips.Controllers
         private static readonly string[] JsCodeSnippets = new[]
         {
             "function multiply(num1,num2) {\\let result = num1 * num2;\\return result;\\multiply(4, 7);"
+            , "let myImage = document.querySelector('img');myImage.onclick = function() { let mySrc = myImage.getAttribute('src');if(mySrc === 'images/firefox-icon.png') { myImage.setAttribute('src','images/firefox2.png');} else {  myImage.setAttribute('src','images/firefox-icon.png'); }}"
         };
 
         [HttpGet]
@@ -22,16 +23,14 @@ namespace ProgrammingTips.Controllers
 
         {
             var grp = new Random();
-            return Enumerable.Range(1, 10).Select(index => new JavaScript
+            return Enumerable.Range(1, 5).Select(index => new JavaScript
             {
                 JsCodeSnippet = JsCodeSnippets[grp.Next(JsCodeSnippets.Length)]
             })
                 .ToArray();
         }
 
-    };
-    // GET: api/<JavaScriptController>
-  
+    };    
 }
 
     //        // GET api/<JavaScriptController>/5
